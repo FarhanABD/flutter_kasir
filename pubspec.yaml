@@ -1,0 +1,44 @@
+name: flutter_kasir
+description: 'A new Flutter project.'
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.8.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  provider: ^6.1.5
+  get_it: ^8.0.3
+  retrofit: ^4.4.2
+  freezed_annotation: ^3.0.0
+  json_annotation: ^4.9.0
+  intl: ^0.19.0
+  shared_preferences: ^2.5.3
+  pretty_dio_logger: ^1.4.0
+  flutter_barcode_scanner: ^2.0.0
+  print_bluetooth_thermal: ^1.1.6
+  esc_pos_utils_plus: ^2.0.4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+  retrofit_generator: ^9.2.0
+  build_runner: ^2.4.15
+  json_serializable: ^6.9.5
+  freezed: ^3.0.6
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter packages.
+flutter:
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
