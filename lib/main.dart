@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_kasir/core/dependency-injection/dependency.dart';
+import 'package:flutter_kasir/core/widget/loading_app_widget.dart';
 import 'package:intl/date_symbol_data_local.dart';
 
 void main() async {
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(colorSchemeSeed: Colors.red),
-      home: Scaffold(body: Center(child: Text('Hello World'))),
+      home: Scaffold(body: LoadingAppWidget()),
     );
   }
 }
