@@ -25,21 +25,27 @@ class ErrorState<T> extends DataState<T> {
       ErrorState(json['message']);
 }
 
-Future<DataState<T>> handleResponse<T>(Future<HttpResponse<DataState>> function() apiCall,
-T Function(dynamic) mapDataSuccess
-) async{
+Future<DataState<T>> handleResponse<T>(
+  Future<HttpResponse<DataState>> Function() apiCall,
+  T Function(dynamic) mapDataSuccess,
+) async {
   try {
-   final HttpResponse<DataState> httpResponse = await apiCall(); 
-   if(httpResponse.response.statusCode == HttpStatus.ok){
-     final response = httpResponse.data;
-     if(response.success){
-      return SuccessState(data: mapDataSuccess(response.data),message: response.message); 
-     } else {
-      return ErrorState(response.message); 
-     }
-   } else {
-     return ErrorState('${httpResponse.response.statusCode} : ${httpResponse.response.statusMessage}');
-   }
+    final HttpResponse<DataState> httpResponse = await apiCall();
+    if (httpResponse.response.statusCode == HttpStatus.ok) {
+      final response = httpResponse.data;
+      if (response.success) {
+        return SuccessState(
+          data: mapDataSuccess(response.data),
+          message: response.message,
+        );
+      } else {
+        return ErrorState(response.message);
+      }
+    } else {
+      return ErrorState(
+        '${httpResponse.response.statusCode} : ${httpResponse.response.statusMessage}',
+      );
+    }
   } catch (e) {
     return ErrorState(e.toString());
   }
